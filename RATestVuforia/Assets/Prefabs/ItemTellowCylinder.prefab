@@ -141,8 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d487d31c3a561a2428113019334bd525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Test
-  image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  itemName: Desert Scene
+  itemIconImage: {fileID: 21300000, guid: 9a168bb2b40044848b3df791316d01c0, type: 3}
+  itemImage: {fileID: 21300000, guid: ae1e1429d64a29f4ca1b1989041cfc67, type: 3}
   ARPreview: 1
   ThreeDView: 1
   MoreInfoView: 1

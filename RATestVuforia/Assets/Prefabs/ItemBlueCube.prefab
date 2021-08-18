@@ -140,8 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d487d31c3a561a2428113019334bd525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: ARItemTest
-  image: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  ARPreview: 1
-  ThreeDView: 0
+  itemName: Ocean Scene
+  itemIconImage: {fileID: 21300000, guid: 2b1a97373fa8b324a909c150f8903a3c, type: 3}
+  itemImage: {fileID: 21300000, guid: c9bdc509b53e90b4e8697f096b268286, type: 3}
+  ARPreview: 0
+  ThreeDView: 1
   MoreInfoView: 1

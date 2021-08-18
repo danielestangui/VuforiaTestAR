@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     private const string itemObjectName = "Item";
+    private bool showInfo = false;
 
     [Header("Catalog")]
     public Transform[] _catalog;
@@ -16,16 +17,22 @@ public class MainMenuController : MonoBehaviour
     public GameObject _itemButtonPrefab;
 
     [Header("Interface componets")]
+    public Image ItemPreviewPanel;
+    public Image ItemPreviewInfo;
     public Text ItemPreviewTittle;
     public Image ItemPreviewImage;
     public Button ARButton;
     public Button ThreeDButton;
     public Button MoreInfoButton;
 
-    public GameObject itemObject;          // DonDestroyOnLoad Item
+    public GameObject itemObject;         
+
 
     private void Start()
     {
+        ResizeInterface();
+        ItemPreviewInfo.gameObject.SetActive(showInfo);
+
 
         if (_catalog.Length > 0) 
         {
@@ -55,11 +62,13 @@ public class MainMenuController : MonoBehaviour
         MoreInfoButton.enabled = newItem.MoreInfoView;
 
         ItemPreviewTittle.text = newItem.itemName;
-        ItemPreviewImage.sprite = newItem.image;
+        ItemPreviewImage.sprite = newItem.itemImage;
+
+        showInfo = false;
+        ItemPreviewInfo.gameObject.SetActive(showInfo);
 
         // ItemObject
         itemObject = newItemObject.gameObject;
-
 
     }
 
@@ -68,4 +77,27 @@ public class MainMenuController : MonoBehaviour
         ItemObjectController.itemObject = itemObject;
         SceneManager.LoadScene(newScene);
     }
+
+    public void ShowInfoAction() 
+    {
+        showInfo = !showInfo;
+
+        if (showInfo)
+        {
+            ItemPreviewInfo.gameObject.SetActive(true);
+        }
+        else 
+        {
+            ItemPreviewInfo.gameObject.SetActive(false);
+        }
+    }
+
+    private void ResizeInterface() 
+    {
+        LayoutElement layoutIPP = ItemPreviewPanel.GetComponent<LayoutElement>();
+        layoutIPP.preferredHeight = Screen.height * 0.60f;
+
+    }
+
+    
 }

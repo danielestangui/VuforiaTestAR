@@ -6,7 +6,9 @@ public class Item : MonoBehaviour
 {
 
     public string itemName;
-    public Sprite image;
+    public Sprite itemIconImage;
+    public Sprite itemImage;
+
 
     public bool ARPreview = false;
     public bool ThreeDView = false;
@@ -15,7 +17,8 @@ public class Item : MonoBehaviour
     public void SetItem(Item item) 
     {
         this.itemName = item.itemName;
-        this.image = item.image;
+        this.itemIconImage = item.itemIconImage;
+        this.itemImage = item.itemImage;
         this.ARPreview = item.ARPreview;
         this.ThreeDView = item.ThreeDView;
         this.MoreInfoView = item.MoreInfoView;

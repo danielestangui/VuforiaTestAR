@@ -19,7 +19,7 @@ public class ItemButtonMM : MonoBehaviour
 
         button.onClick.AddListener(TaskOnClick);
         buttonTitle.text = item.GetComponent<Item>().itemName;
-        buttonImage.sprite = item.GetComponent<Item>().image;
+        buttonImage.sprite = item.GetComponent<Item>().itemIconImage;
     }
 
     private void TaskOnClick() 
